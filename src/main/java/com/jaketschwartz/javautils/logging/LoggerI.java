@@ -170,7 +170,7 @@ public class LoggerI implements Logger {
         final StringBuilder stackTraceBuilder = new StringBuilder();
         stackTraceBuilder.append(throwable.getMessage()).append("\n");
         for (final StackTraceElement element: throwable.getStackTrace()) {
-            stackTraceBuilder.append("at ")
+            stackTraceBuilder.append("\tat ")
                              .append(element.getClassName())
                              .append(" ")
                              .append(element.getMethodName())
