@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c5c0ac5-d80e-487c-8276-c5583fd527e3" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/jaketschwartz/javautils/logging/TestLoggerI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/jaketschwartz/javautils/logging/LoggerI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/jaketschwartz/javautils/logging/LoggerI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/com/jaketschwartz/javautils/parsing/TestSafeParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/com/jaketschwartz/javautils/parsing/TestSafeParser.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jaketschwartz/javautils/logging/LoggerI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jaketschwartz/javautils/logging/LoggerI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/jaketschwartz/javautils/parsing/TestSafeParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/jaketschwartz/javautils/parsing/TestSafeParser.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -21,15 +23,32 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="javautils" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
   <component name="FileEditorManager">
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="TestSafeParser.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/test/java/com/jaketschwartz/javautils/parsing/TestSafeParser.java">
+          <file leaf-file-name="TestLoggerI.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/test/java/com/jaketschwartz/javautils/logging/TestLoggerI.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="119">
-                  <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+                <state relative-caret-position="350">
+                  <caret line="222" column="60" selection-start-line="222" selection-start-column="60" selection-end-line="222" selection-end-column="60" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -37,11 +56,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="SafeParser.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/jaketschwartz/javautils/parsing/SafeParser.java">
+          <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/build.gradle">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="119">
-                  <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+                <state relative-caret-position="204">
+                  <caret line="12" column="62" selection-start-line="12" selection-start-column="62" selection-end-line="12" selection-end-column="62" />
                 </state>
               </provider>
             </entry>
@@ -50,11 +69,14 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="SafeParser.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/jaketschwartz/javautils/parsing/SafeParser.java">
+          <file leaf-file-name="LoggerI.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/jaketschwartz/javautils/logging/LoggerI.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="119">
-                  <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+                <state relative-caret-position="1275">
+                  <caret line="89" column="18" selection-start-line="89" selection-start-column="18" selection-end-line="89" selection-end-column="18" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -62,6 +84,13 @@
         </leaf>
       </split-second>
     </splitter>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -244,7 +273,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="6175571231486" />
+        <entry key="$PROJECT_DIR$" value="6175574267741" />
         <entry key="$PROJECT_DIR$/.gradle" value="0" />
         <entry key="$PROJECT_DIR$/build.gradle" value="3700904495" />
         <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="2083459160" />
@@ -433,8 +462,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/jaketschwartz/javautils/logging/LoggerI.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/jaketschwartz/javautils/parsing/TestSafeParser.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/jaketschwartz/javautils/logging/TestLogger.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jaketschwartz/javautils/time/TimeUtil.java" />
+        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jaketschwartz/javautils/logging/LoggerI.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/jaketschwartz/javautils/logging/TestLoggerI.java" />
       </list>
     </option>
   </component>
@@ -576,6 +609,17 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="jaketschwartz" type="462c0819:PsiDirectoryNode" />
               <item name="javautils" type="462c0819:PsiDirectoryNode" />
+              <item name="logging" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="javautils" type="b2602c69:ProjectViewProjectNode" />
+              <item name="javautils" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="jaketschwartz" type="462c0819:PsiDirectoryNode" />
+              <item name="javautils" type="462c0819:PsiDirectoryNode" />
               <item name="parsing" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -604,23 +648,46 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestSafeParser.testEnumValueGoodInputString">
+  <component name="RunManager" selected="JUnit.TestLoggerI">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
-    <configuration name="TestSafeParser.testEnumValueBadInputString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestLoggerI" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="javautils_test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.jaketschwartz.javautils.parsing.*" />
+          <option name="PATTERN" value="com.jaketschwartz.javautils.logging.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.jaketschwartz.javautils.parsing" />
-      <option name="MAIN_CLASS_NAME" value="com.jaketschwartz.javautils.parsing.TestSafeParser" />
-      <option name="METHOD_NAME" value="testEnumValueBadInputString" />
+      <option name="PACKAGE_NAME" value="com.jaketschwartz.javautils.logging" />
+      <option name="MAIN_CLASS_NAME" value="com.jaketschwartz.javautils.logging.TestLoggerI" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="TestLoggerI.testDebugNullText" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="javautils_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jaketschwartz.javautils.logging.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.jaketschwartz.javautils.logging" />
+      <option name="MAIN_CLASS_NAME" value="com.jaketschwartz.javautils.logging.TestLoggerI" />
+      <option name="METHOD_NAME" value="testDebugNullText" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -631,19 +698,19 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="TestSafeParser.testEnumValueGoodInputString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestLoggerI.testDebugTooHighLevel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="javautils_test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.jaketschwartz.javautils.parsing.*" />
+          <option name="PATTERN" value="com.jaketschwartz.javautils.logging.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.jaketschwartz.javautils.parsing" />
-      <option name="MAIN_CLASS_NAME" value="com.jaketschwartz.javautils.parsing.TestSafeParser" />
-      <option name="METHOD_NAME" value="testEnumValueGoodInputString" />
+      <option name="PACKAGE_NAME" value="com.jaketschwartz.javautils.logging" />
+      <option name="MAIN_CLASS_NAME" value="com.jaketschwartz.javautils.logging.TestLoggerI" />
+      <option name="METHOD_NAME" value="testDebugTooHighLevel" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -654,19 +721,42 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="TestSafeParser.testEnumValueNullClass" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestLoggerI.testTraceWithArgs" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="javautils_test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.jaketschwartz.javautils.parsing.*" />
+          <option name="PATTERN" value="com.jaketschwartz.javautils.logging.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.jaketschwartz.javautils.parsing" />
-      <option name="MAIN_CLASS_NAME" value="com.jaketschwartz.javautils.parsing.TestSafeParser" />
-      <option name="METHOD_NAME" value="testEnumValueNullClass" />
+      <option name="PACKAGE_NAME" value="com.jaketschwartz.javautils.logging" />
+      <option name="MAIN_CLASS_NAME" value="com.jaketschwartz.javautils.logging.TestLoggerI" />
+      <option name="METHOD_NAME" value="testTraceWithArgs" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="TestLoggerI.testTraceWithExceptionAndArgs" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="javautils_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jaketschwartz.javautils.logging.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.jaketschwartz.javautils.logging" />
+      <option name="MAIN_CLASS_NAME" value="com.jaketschwartz.javautils.logging.TestLoggerI" />
+      <option name="METHOD_NAME" value="testTraceWithExceptionAndArgs" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -716,15 +806,19 @@
       <listeners />
     </configuration>
     <list>
-      <item itemvalue="JUnit.TestSafeParser.testEnumValueNullClass" />
-      <item itemvalue="JUnit.TestSafeParser.testEnumValueBadInputString" />
-      <item itemvalue="JUnit.TestSafeParser.testEnumValueGoodInputString" />
+      <item itemvalue="JUnit.TestLoggerI" />
+      <item itemvalue="JUnit.TestLoggerI.testTraceWithArgs" />
+      <item itemvalue="JUnit.TestLoggerI.testTraceWithExceptionAndArgs" />
+      <item itemvalue="JUnit.TestLoggerI.testDebugTooHighLevel" />
+      <item itemvalue="JUnit.TestLoggerI.testDebugNullText" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestSafeParser.testEnumValueGoodInputString" />
-        <item itemvalue="JUnit.TestSafeParser.testEnumValueBadInputString" />
-        <item itemvalue="JUnit.TestSafeParser.testEnumValueNullClass" />
+        <item itemvalue="JUnit.TestLoggerI" />
+        <item itemvalue="JUnit.TestLoggerI.testDebugNullText" />
+        <item itemvalue="JUnit.TestLoggerI.testDebugTooHighLevel" />
+        <item itemvalue="JUnit.TestLoggerI.testTraceWithExceptionAndArgs" />
+        <item itemvalue="JUnit.TestLoggerI.testTraceWithArgs" />
       </list>
     </recent_temporary>
   </component>
@@ -742,20 +836,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestSafeParser_testEnumValueNullClass - 2018.12.03 at 20h 14m 00s.xml">
-      <configuration name="TestSafeParser.testEnumValueNullClass" configurationId="JUnit" />
+    <history-entry file="TestLoggerI_testTraceWithExceptionAndArgs - 2018.12.03 at 21h 12m 37s.xml">
+      <configuration name="TestLoggerI.testTraceWithExceptionAndArgs" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestSafeParser_testEnumValueBadInputString - 2018.12.03 at 20h 15m 05s.xml">
-      <configuration name="TestSafeParser.testEnumValueBadInputString" configurationId="JUnit" />
+    <history-entry file="TestLoggerI_testTraceWithArgs - 2018.12.03 at 21h 14m 00s.xml">
+      <configuration name="TestLoggerI.testTraceWithArgs" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestSafeParser_testEnumValueBadInputString - 2018.12.03 at 20h 15m 50s.xml">
-      <configuration name="TestSafeParser.testEnumValueBadInputString" configurationId="JUnit" />
+    <history-entry file="TestLoggerI_testTraceWithExceptionAndArgs - 2018.12.03 at 21h 14m 02s.xml">
+      <configuration name="TestLoggerI.testTraceWithExceptionAndArgs" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestSafeParser_testEnumValueBadInputString - 2018.12.03 at 20h 16m 40s.xml">
-      <configuration name="TestSafeParser.testEnumValueBadInputString" configurationId="JUnit" />
+    <history-entry file="TestLoggerI_testTraceWithExceptionAndArgs - 2018.12.03 at 21h 14m 09s.xml">
+      <configuration name="TestLoggerI.testTraceWithExceptionAndArgs" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestSafeParser_testEnumValueGoodInputString - 2018.12.03 at 20h 17m 57s.xml">
-      <configuration name="TestSafeParser.testEnumValueGoodInputString" configurationId="JUnit" />
+    <history-entry file="TestLoggerI_testTraceWithExceptionAndArgs - 2018.12.03 at 21h 14m 14s.xml">
+      <configuration name="TestLoggerI.testTraceWithExceptionAndArgs" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestLoggerI_testTraceWithExceptionAndArgs - 2018.12.03 at 21h 14m 35s.xml">
+      <configuration name="TestLoggerI.testTraceWithExceptionAndArgs" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestLoggerI_testDebugTooHighLevel - 2018.12.03 at 21h 15m 58s.xml">
+      <configuration name="TestLoggerI.testDebugTooHighLevel" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestLoggerI - 2018.12.03 at 21h 16m 03s.xml">
+      <configuration name="TestLoggerI" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestLoggerI_testDebugNullText - 2018.12.03 at 21h 17m 14s.xml">
+      <configuration name="TestLoggerI.testDebugNullText" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestLoggerI - 2018.12.03 at 21h 18m 23s.xml">
+      <configuration name="TestLoggerI" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -764,7 +873,7 @@
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" />
+      <window_info anchor="bottom" id="Messages" weight="0.32960895" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
@@ -777,7 +886,7 @@
       <window_info id="Designer" order="2" />
       <window_info content_ui="combo" id="Project" order="0" weight="0.25" />
       <window_info anchor="bottom" id="Build" order="7" weight="0.32943678" />
-      <window_info anchor="right" id="Gradle" order="3" />
+      <window_info anchor="right" id="Gradle" order="3" weight="0.32995737" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
@@ -795,6 +904,11 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="3" />
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/javautils/build.gradle" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jaketschwartz/javautils/parsing/SafeParser.java">
@@ -804,17 +918,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jaketschwartz/javautils/logging/LoggerI.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/jaketschwartz/javautils/logging/TestLogger.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="172" column="45" lean-forward="true" selection-start-line="172" selection-start-column="45" selection-end-line="172" selection-end-column="45" />
+        <state relative-caret-position="85">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/jaketschwartz/javautils/parsing/TestSafeParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
+        <state relative-caret-position="-7">
           <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-9.0.4/lib/src.zip!/jdk.internal.opt/jdk/internal/joptsimple/internal/Strings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="67" column="31" selection-start-line="67" selection-start-column="31" selection-end-line="67" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-9.0.4/lib/src.zip!/java.base/java/time/LocalDateTime.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="134" column="19" selection-start-line="134" selection-start-column="19" selection-end-line="134" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jaketschwartz/javautils/time/TimeUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="36" selection-start-column="36" selection-end-column="36" />
+          <folding>
+            <element signature="e#267#268#0" expanded="true" />
+            <element signature="e#309#310#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jaketschwartz/javautils/logging/LoggerI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="89" column="18" selection-start-line="89" selection-start-column="18" selection-end-line="89" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="62" selection-start-line="12" selection-start-column="62" selection-end-line="12" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/jaketschwartz/javautils/logging/TestLoggerI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="222" column="60" selection-start-line="222" selection-start-column="60" selection-end-line="222" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

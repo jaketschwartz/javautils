@@ -1,6 +1,8 @@
 package com.jaketschwartz.javautils.logging;
 
+import java.time.LocalDateTime;
 import java.util.Arrays;
+import java.util.Objects;
 import java.util.Optional;
 
 /**
@@ -16,16 +18,13 @@ public class LoggerI implements Logger {
     private LogLevel logLevel = LogLevel.TRACE;
 
     public LoggerI(final Class loggingForClass) {
-        if (loggingForClass == null) {
-            throw new RuntimeException("You cannot declare a logger for no class!");
-        }
+        Objects.requireNonNull(loggingForClass, "You must provide a non-null class to create a LoggerI!");
         this.loggingForClass = loggingForClass;
     }
 
     public LoggerI(final Class loggingForClass, final LogLevel logLevel) {
-        if (loggingForClass == null) {
-            throw new RuntimeException("You cannot declare a logger for no class!");
-        }
+        Objects.requireNonNull(loggingForClass, "You must provide a non-null class to create a LoggerI!");
+        Objects.requireNonNull(logLevel, "You must provide a non-null LogLevel to create a LoggerI!");
         this.loggingForClass = loggingForClass;
         this.logLevel = logLevel;
     }
@@ -84,6 +83,9 @@ public class LoggerI implements Logger {
         // Ex: [ INFO][com.whatever.otherpac…YourClass] -
         logBuilder.append("[")
                   .append(String.format("%5.5s", currentLevel.name()))
+                  .append("]")
+                  .append("[")
+                  .append(LocalDateTime.now())
                   .append("]")
                   .append("[")
                   .append(String.format("%" + CLASS_NAME_DISPLAY_SIZE + "." + CLASS_NAME_DISPLAY_SIZE + "s",
