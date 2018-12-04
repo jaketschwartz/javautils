@@ -1,7 +1,7 @@
 package com.jaketschwartz.javautils.parsing;
 
 import com.jaketschwartz.javautils.logging.Logger;
-import com.jaketschwartz.javautils.logging.LoggingProvider;
+import com.jaketschwartz.javautils.logging.LoggerProvider;
 
 import java.util.Optional;
 
@@ -9,7 +9,7 @@ import java.util.Optional;
  * This class safely parses values from one type to another, giving empty Optional output when bad input is encountered.
  */
 public class SafeParser {
-    private static final Logger log = LoggingProvider.logger(SafeParser.class);
+    private static final Logger log = LoggerProvider.logger(SafeParser.class);
 
     /**
      * Converts a String to its Enum value counterpart.

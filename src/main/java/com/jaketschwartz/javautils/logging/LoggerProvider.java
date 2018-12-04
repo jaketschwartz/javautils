@@ -5,7 +5,7 @@ import java.util.function.Function;
 /**
  * Globally provides logs to external classes by allowing simple Function funneling for Logger creation.
  */
-public class LoggingProvider {
+public class LoggerProvider {
     // The default Logger is just a new instance of LoggerI
     private static Function<Class, ? extends Logger> loggerGenerator = LoggerI::new;
 
@@ -16,7 +16,7 @@ public class LoggingProvider {
      * @param <T> The Type of class to create that implements Logger.
      */
     public static<T extends Logger> void setLoggerGenerator(final Function<Class, T> loggerGenerator) {
-        LoggingProvider.loggerGenerator = loggerGenerator;
+        LoggerProvider.loggerGenerator = loggerGenerator;
     }
 
     /**
@@ -25,6 +25,6 @@ public class LoggingProvider {
      * @return The newly-generated Logger.
      */
     public static Logger logger(final Class loggerClass) {
-        return LoggingProvider.loggerGenerator.apply(loggerClass);
+        return LoggerProvider.loggerGenerator.apply(loggerClass);
     }
 }
