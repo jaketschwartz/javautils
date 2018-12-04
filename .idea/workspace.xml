@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c5c0ac5-d80e-487c-8276-c5583fd527e3" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/jaketschwartz/javautils/logging/LogLevel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/jaketschwartz/javautils/logging/Logger.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/jaketschwartz/javautils/logging/LoggerI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/jaketschwartz/javautils/logging/LoggingProvider.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/jaketschwartz/javautils/parsing/SafeParser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/com/jaketschwartz/javautils/logging/TestLoggerI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/com/jaketschwartz/javautils/parsing/TestSafeParser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jaketschwartz/javautils/logging/LoggerI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jaketschwartz/javautils/logging/LoggerI.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -72,8 +65,8 @@
           <file leaf-file-name="LoggerI.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/com/jaketschwartz/javautils/logging/LoggerI.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1275">
-                  <caret line="89" column="18" selection-start-line="89" selection-start-column="18" selection-end-line="89" selection-end-column="18" />
+                <state relative-caret-position="-585">
+                  <caret line="124" column="34" selection-start-line="124" selection-start-column="34" selection-end-line="124" selection-end-column="34" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -466,9 +459,9 @@
         <option value="$PROJECT_DIR$/src/test/java/com/jaketschwartz/javautils/logging/TestLogger.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jaketschwartz/javautils/time/TimeUtil.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jaketschwartz/javautils/logging/LoggerI.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/jaketschwartz/javautils/logging/TestLoggerI.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jaketschwartz/javautils/logging/LoggerI.java" />
       </list>
     </option>
   </component>
@@ -549,79 +542,6 @@
               <item name="jaketschwartz" type="462c0819:PsiDirectoryNode" />
               <item name="javautils" type="462c0819:PsiDirectoryNode" />
               <item name="logging" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="javautils" type="b2602c69:ProjectViewProjectNode" />
-              <item name="javautils" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="jaketschwartz" type="462c0819:PsiDirectoryNode" />
-              <item name="javautils" type="462c0819:PsiDirectoryNode" />
-              <item name="parsing" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="javautils" type="b2602c69:ProjectViewProjectNode" />
-              <item name="javautils" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="javautils" type="b2602c69:ProjectViewProjectNode" />
-              <item name="javautils" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="javautils" type="b2602c69:ProjectViewProjectNode" />
-              <item name="javautils" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="javautils" type="b2602c69:ProjectViewProjectNode" />
-              <item name="javautils" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="jaketschwartz" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="javautils" type="b2602c69:ProjectViewProjectNode" />
-              <item name="javautils" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="jaketschwartz" type="462c0819:PsiDirectoryNode" />
-              <item name="javautils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="javautils" type="b2602c69:ProjectViewProjectNode" />
-              <item name="javautils" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="jaketschwartz" type="462c0819:PsiDirectoryNode" />
-              <item name="javautils" type="462c0819:PsiDirectoryNode" />
-              <item name="logging" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="javautils" type="b2602c69:ProjectViewProjectNode" />
-              <item name="javautils" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="jaketschwartz" type="462c0819:PsiDirectoryNode" />
-              <item name="javautils" type="462c0819:PsiDirectoryNode" />
-              <item name="parsing" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -885,7 +805,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.25" />
       <window_info anchor="bottom" id="Build" order="7" weight="0.32943678" />
       <window_info anchor="right" id="Gradle" order="3" weight="0.32995737" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -961,16 +881,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jaketschwartz/javautils/logging/LoggerI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="89" column="18" selection-start-line="89" selection-start-column="18" selection-end-line="89" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/jaketschwartz/javautils/logging/TestLoggerI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -992,6 +902,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jaketschwartz/javautils/logging/LoggerI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-585">
+          <caret line="124" column="34" selection-start-line="124" selection-start-column="34" selection-end-line="124" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

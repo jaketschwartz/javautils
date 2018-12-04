@@ -69,7 +69,7 @@ public class LoggerI implements Logger {
      * @param message The text to format.
      * @param args The arguments to format into the text.
      */
-    private void displayLog(final LogLevel currentLevel, final String message, Object... args) {
+    private void displayLog(final LogLevel currentLevel, String message, Object... args) {
         if (currentLevel == null) {
             throw new RuntimeException("This should never happen! An internal LogLevel was supplied as null!");
         }
@@ -109,21 +109,20 @@ public class LoggerI implements Logger {
             // Slice off the last index of the array to prevent it from being parsed later on
             args = Arrays.copyOf(args, args.length - 1);
         }
-        String formattedLog = message;
         // Iterate on all object arguments, null check them, and then replace instances of {} with their stringified
         // versions
         for (final Object object: args) {
             // Although this makes linear evaluations with perfect input more expensive, in instances of larger
             // input than amounts of replacement characters, this will break FAR before the expense becomes relevant
-            if (!formattedLog.contains(REPLACEMENT_SYMBOL)) {
+            if (!message.contains(REPLACEMENT_SYMBOL)) {
                 break;
             }
-            formattedLog = formattedLog.replaceFirst(String.format("\\%s", REPLACEMENT_SYMBOL),
-                                                     Optional.ofNullable(object)
-                                                             .map(Object::toString)
-                                                             .orElse("null"));
+            message = message.replaceFirst(String.format("\\%s", REPLACEMENT_SYMBOL),
+                                           Optional.ofNullable(object)
+                                                   .map(Object::toString)
+                                                   .orElse("null"));
         }
-        logBuilder.append(formattedLog);
+        logBuilder.append(message);
         // If we had an exception, we can append our exception text on a new line
         if (exceptionText != null) {
             logBuilder.append("\n").append(exceptionText);
