@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.regex.Matcher;
 
 /**
  * A very basic implementation of the com.jaketschwartz.javautils.logging.Logger interface.  This is used as the default
@@ -120,6 +121,7 @@ public class LoggerI implements Logger {
             message = message.replaceFirst(String.format("\\%s", REPLACEMENT_SYMBOL),
                                            Optional.ofNullable(object)
                                                    .map(Object::toString)
+                                                   .map(Matcher::quoteReplacement)
                                                    .orElse("null"));
         }
         logBuilder.append(message);
