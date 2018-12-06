@@ -234,4 +234,11 @@ public class TestNumeric {
         final Integer output = Numeric.of(15).multiply(2).divide(3).subtract(3).getInteger().orElse(null);
         assertEquals("((15 * 2) / 3) - 3 = 7", Integer.valueOf(7), output);
     }
+
+    @Test
+    public void testChainingDoesNotBreakWithBadValues() {
+        final Integer output =
+                Numeric.of(10).add("HELLO").subtract(3).multiply(new ArrayList<>()).divide(7).getInteger().orElse(null);
+        assertEquals("(10 - 3) / 7 = 1", Integer.valueOf(1), output);
+    }
 }
