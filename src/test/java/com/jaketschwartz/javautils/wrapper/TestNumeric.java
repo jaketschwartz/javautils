@@ -167,6 +167,12 @@ public class TestNumeric {
     }
 
     @Test
+    public void testAddBadValueHasNoEffect() {
+        final Integer output = Numeric.of(10).add("WORDS").getInteger().orElse(null);
+        assertEquals("Adding a nonsense value will return the original value", Integer.valueOf(10), output);
+    }
+
+    @Test
     public void testSubtract() {
         final Integer output = Numeric.of(100).subtract(30).getInteger().orElse(null);
         assertEquals("100 minus 30 equals 70", Integer.valueOf(70), output);
@@ -176,6 +182,13 @@ public class TestNumeric {
     public void testSubtractDifferentTypes() {
         final Double output = Numeric.of(35.7f).subtract(10).getDouble().orElse(null);
         assertEquals("35.7 minutes 10 equals 25.7", Double.valueOf(25.7d), output);
+    }
+
+    @Test
+    public void testSubtractBadValueHasNoEffect() {
+        final Integer output = Numeric.of(10).subtract("WORDS").getInteger().orElse(null);
+        assertEquals("Subtracting a nonsense value will return the original value", Integer.valueOf(10),
+                output);
     }
 
     @Test
@@ -191,6 +204,13 @@ public class TestNumeric {
     }
 
     @Test
+    public void testMultiplyBadValueHasNoEffect() {
+        final Integer output = Numeric.of(10).multiply("WORDS").getInteger().orElse(null);
+        assertEquals("Multiplying by a nonsense value will return the original value", Integer.valueOf(10),
+                output);
+    }
+
+    @Test
     public void testDivide() {
         final Integer output = Numeric.of(150).divide(3).getInteger().orElse(null);
         assertEquals("150 divided by 3 equals 50", Integer.valueOf(50), output);
@@ -200,5 +220,18 @@ public class TestNumeric {
     public void testDivideDifferentTypes() {
         final Double output = Numeric.of(7).divide(2).getDouble().orElse(null);
         assertEquals("7 divided by 2 equals 3.5", Double.valueOf(3.5d), output);
+    }
+
+    @Test
+    public void testDivideBadValueHasNoEffect() {
+        final Integer output = Numeric.of(10).divide("WORDS").getInteger().orElse(null);
+        assertEquals("Dividing by a nonsense value will return the original value", Integer.valueOf(10),
+                output);
+    }
+
+    @Test
+    public void testChainingMath() {
+        final Integer output = Numeric.of(15).multiply(2).divide(3).subtract(3).getInteger().orElse(null);
+        assertEquals("((15 * 2) / 3) - 3 = 7", Integer.valueOf(7), output);
     }
 }
