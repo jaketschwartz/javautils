@@ -5,6 +5,7 @@ import com.jaketschwartz.javautils.logging.LoggerProvider;
 import com.jaketschwartz.javautils.parsing.SafeParser;
 
 import java.math.BigDecimal;
+import java.math.MathContext;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -74,7 +75,7 @@ public final class Numeric {
      * @return A new Numeric representing the mathematical transformation.
      */
     public<T> Numeric divide(final T divisor) {
-        return this.applyMath(divisor, BigDecimal::divide);
+        return this.applyMath(divisor, (first, second) -> first.divide(second, MathContext.DECIMAL128));
     }
 
     /**
