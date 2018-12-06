@@ -7,34 +7,23 @@ import com.jaketschwartz.javautils.parsing.SafeParser;
 import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
+import java.util.function.BiFunction;
 import java.util.stream.Collectors;
 
 /**
  * An overarching wrapper class for numerous different numeric classes in Java.  Allows seamless conversions between
  * each other, where possible; attempts to be as similar to typecasting as possible.
- * @param <T>
+ * TODO: Home-grow our own mathematical operations instead of cheating by wrapping BigDecimal operations.
  */
-public class Numeric<T> {
+public final class Numeric {
     private static final Logger log = LoggerProvider.logger(Numeric.class);
     // Current registry of supported numeric classes
     private static final List<Class> NUMERIC_CLASSES = Arrays.asList(Byte.class, Integer.class, Short.class,
-            Float.class, Long.class, Double.class);
-    private T value;
-
-    private Numeric(T value) {
-        // If a null value is supplied, NPE immediately
-        Objects.requireNonNull(value, "Numeric requres a non-null value!");
-        // If an unsupported class is provided, list the potential classes and throw an IAE
-        if (NUMERIC_CLASSES.stream().noneMatch(clazz -> clazz.isInstance(value))) {
-            final String supportedClasses =
-                    NUMERIC_CLASSES.stream().map(Class::getSimpleName).collect(Collectors.joining(","));
-            throw new IllegalArgumentException(String.format("Numeric does not support instances of [%s]! Please " +
-                    "enter any of: [%s]", value.getClass().getSimpleName(), supportedClasses));
-        }
-        this.value = value;
-    }
+            Float.class, Long.class, Double.class, BigDecimal.class);
+    private static final String NUMERIC_CLASSES_MESSAGE =
+            NUMERIC_CLASSES.stream().map(Class::getSimpleName).collect(Collectors.joining(","));
+    private Optional<BigDecimal> value = Optional.empty();
 
     /**
      * Statically creates an instance of a Numeric object for the provided value.
@@ -42,25 +31,50 @@ public class Numeric<T> {
      * @param <T> Any Type of object that hopefully conforms to the current NUMERIC_CLASSES List.
      * @return The Numeric-wrapped value.
      */
-    public static<T> Numeric<T> of(final T value) {
-        return new Numeric<>(value);
+    public static<T> Numeric of(final T value) {
+        return new Numeric(value);
     }
 
     /**
-     * Attempts to create an instance of Numeric, isolating any potential exceptions within.
-     * @param value The value to convert to a Numeric.
-     * @param <T> Any Type of object that hopefully conforms to the current NUMERIC_CLASSES List.
-     * @return The Numeric-wrapped value.
+     * Adds the input value to the value of the current Numeric and returns a new Numeric, maintaining immutability.
+     * @param augend The value to add to the current value.
+     * @param <T> Any Type that can be converted to a Numeric.
+     * @return A new Numeric representing the mathematical transformation.
      */
-    public static<T> Optional<Numeric<T>> parse(final T value) {
-        try {
-            return Optional.of(new Numeric<>(value));
-        } catch(NullPointerException e) {
-            log.error("Failed to create a Numeric from a null value", e);
-        } catch (IllegalArgumentException e) {
-            log.error("Bad input provided to Numeric", e);
-        }
-        return Optional.empty();
+    public<T> Numeric add(final T augend) {
+        return this.applyMath(augend, BigDecimal::add);
+    }
+
+    /**
+     * Subtracts the input value from the value of the current Numeric and returns a new Numeric, maintaining
+     * immutability.
+     * @param subtrahend The value to subtract from the current value.
+     * @param <T> Any Type that can be converted to a Numeric.
+     * @return A new Numeric representing the mathematical transformation.
+     */
+    public<T> Numeric subtract(final T subtrahend) {
+        return this.applyMath(subtrahend, BigDecimal::subtract);
+    }
+
+    /**
+     * Multiplies the input value by the value of the current Numeric and returns a new Numeric, maintaining
+     * immutability.
+     * @param multiplicand The value to multiply the current value by.
+     * @param <T> Any Type that can be converted to a Numeric.
+     * @return A new Numeric representing the mathematical transformation.
+     */
+    public<T> Numeric multiply(final T multiplicand) {
+        return this.applyMath(multiplicand, BigDecimal::multiply);
+    }
+
+    /**
+     * Divides the value of the current Numeric by the input value and returns a new Numeric, maintaining immutability.
+     * @param divisor The value to divide the current Numeric value by.
+     * @param <T> Any Type that can be converted to a Numeric.
+     * @return A new Numeric representing the mathematical transformation.
+     */
+    public<T> Numeric divide(final T divisor) {
+        return this.applyMath(divisor, BigDecimal::divide);
     }
 
     /**
@@ -68,7 +82,7 @@ public class Numeric<T> {
      * @return The Byte, or an empty Optional on errors.
      */
     public Optional<Byte> getByte() {
-        return SafeParser.byteFromString(value.toString());
+        return value.map(BigDecimal::toString).flatMap(SafeParser::byteFromString);
     }
 
     /**
@@ -76,7 +90,7 @@ public class Numeric<T> {
      * @return The Integer, or an empty Optional on errors.
      */
     public Optional<Integer> getInteger() {
-        return SafeParser.integerFromString(value.toString());
+        return value.map(BigDecimal::toString).flatMap(SafeParser::integerFromString);
     }
 
     /**
@@ -84,7 +98,7 @@ public class Numeric<T> {
      * @return The Short, or an empty Optional on errors.
      */
     public Optional<Short> getShort() {
-        return SafeParser.shortFromString(value.toString());
+        return value.map(BigDecimal::toString).flatMap(SafeParser::shortFromString);
     }
 
     /**
@@ -92,7 +106,7 @@ public class Numeric<T> {
      * @return The Float, or an empty Optional on errors.
      */
     public Optional<Float> getFloat() {
-        return SafeParser.floatFromString(value.toString());
+        return value.map(BigDecimal::toString).flatMap(SafeParser::floatFromString);
     }
 
     /**
@@ -100,7 +114,7 @@ public class Numeric<T> {
      * @return The Long, or an empty Optional on errors.
      */
     public Optional<Long> getLong() {
-        return SafeParser.longFromString(value.toString());
+        return value.map(BigDecimal::toString).flatMap(SafeParser::longFromString);
     }
 
     /**
@@ -108,7 +122,7 @@ public class Numeric<T> {
      * @return The Double, or an empty Optional on errors.
      */
     public Optional<Double> getDouble() {
-        return SafeParser.doubleFromString(value.toString());
+        return value.map(BigDecimal::toString).flatMap(SafeParser::doubleFromString);
     }
 
     /**
@@ -116,14 +130,58 @@ public class Numeric<T> {
      * @return The BigDecimal, or an empty Optional on errors.
      */
     public Optional<BigDecimal> getBigDecimal() {
-        return SafeParser.bigDecimalFromString(value.toString());
+        return value;
     }
 
     /**
-     * Fetches the internalized value in its initial incarnation.
-     * @return The original value that created this Numeric.
+     * Determines if the internal BigDecimal value exists.
+     * @return True IF the Optionally-wrapped BigDecimal is present.
      */
-    public T get() {
-        return value;
+    public boolean isPresent() {
+        return value.isPresent();
+    }
+
+    /**
+     * Constructs a new Numeric object with regards for null values and an input whitelist.
+     * @param value The value to attempt to convert to a Numeric.
+     * @param <T> Any object type, but hopefully something on the whitelist.
+     */
+    private<T> Numeric(final T value) {
+        if (value == null) {
+            log.warn("Null value supplied to Numeric! Please enter any of: [{}]", NUMERIC_CLASSES_MESSAGE);
+            return;
+        }
+        // If an unsupported class is provided, list the potential classes and throw an IAE
+        if (NUMERIC_CLASSES.stream().noneMatch(clazz -> clazz.isInstance(value))) {
+            log.error("Numeric does not support instances of {}! Please enter any of: [{}]",
+                    value.getClass().getSimpleName(), NUMERIC_CLASSES_MESSAGE);
+            return;
+        }
+        this.value = SafeParser.bigDecimalFromString(value.toString());
+    }
+
+    /**
+     * Transforms the input into a Numeric, attempts to apply a math function to its internal value in relation to the
+     * currently-encapsulated value for this, and ships the completed computation out as a new Numeric, maintaining
+     * immutability.
+     * @param manipulation The input value to transform into a Numeric.
+     * @param manipulator The Function describing how to transform the value of this.
+     * @param <T> Any Type that can be converted to a Numeric from the whitelist.
+     * @return A new Numeric representing the mathematical transformation.
+     */
+    private<T> Numeric applyMath(final T manipulation,
+                                 final BiFunction<BigDecimal, BigDecimal, BigDecimal> manipulator) {
+        if (manipulator == null) {
+            log.error("This is a bug! An internal call to applyMath supplied a null manipulation function!");
+            return this;
+        }
+        if (!this.value.isPresent()) {
+            return this;
+        }
+        final BigDecimal input = new Numeric(manipulation).getBigDecimal().orElse(null);
+        if (input == null) {
+            return this;
+        }
+        return new Numeric(manipulator.apply(this.value.get(), input));
     }
 }
